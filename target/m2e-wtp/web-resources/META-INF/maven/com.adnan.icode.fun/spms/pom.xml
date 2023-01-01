@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.adnan.icode.fun</groupId>
+  <artifactId>spms</artifactId>
+  <version>1.0</version>
+  <packaging>war</packaging>
+
+  <name>spms Maven Webapp</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring.framework.version>5.3.21</spring.framework.version>
+    <spring.framework.security.version>5.7.2</spring.framework.security.version>
+    <mysql.version>8.0.19</mysql.version>
+    <c3p0.version>0.9.5.5</c3p0.version>
+    <hibernate.version>5.6.10.Final</hibernate.version>
+    <hibernate.validator.version>6.2.4.Final</hibernate.validator.version>
+    <javax.mail.version>1.6.2</javax.mail.version>
+    <commons.fileupload.version>1.4</commons.fileupload.version>
+    <commons.io.version>2.11.0</commons.io.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+  
+    <!-- Spring Support -->
+ 	<dependency>
+ 	 <groupId>org.springframework</groupId>
+  	 <artifactId>spring-webmvc</artifactId>
+  	 <version>${spring.framework.version}</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-orm</artifactId>
+	  <version>${spring.framework.version}</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-tx</artifactId>
+	  <version>${spring.framework.version}</version>
+	</dependency>
+	
+	<!-- Spring Context Support With Java Mail Sender -->
+	<dependency>
+  	  <groupId>org.springframework</groupId>
+ 	  <artifactId>spring-context-support</artifactId>
+  	  <version>${spring.framework.version}</version>
+	</dependency>
+	
+	<dependency>
+  	  <groupId>com.sun.mail</groupId>
+      <artifactId>javax.mail</artifactId>
+      <version>${javax.mail.version}</version>
+    </dependency>
+	
+	<!-- Spring Security Support -->
+	<dependency>
+	  <groupId>org.springframework.security</groupId>
+	  <artifactId>spring-security-web</artifactId>
+	  <version>${spring.framework.security.version}</version>
+	</dependency>	
+ 
+	<dependency>
+	  <groupId>org.springframework.security</groupId>
+	  <artifactId>spring-security-config</artifactId>
+	  <version>${spring.framework.security.version}</version>
+	</dependency>
+	
+	<!-- Spring Security taglibs support -->
+	<dependency>
+	  <groupId>org.springframework.security</groupId>
+	  <artifactId>spring-security-taglibs</artifactId>
+	  <version>${spring.framework.security.version}</version>
+	</dependency>
+	
+	<!--  MySQL and C3P0 support -->
+	<dependency>
+	  <groupId>mysql</groupId>
+	  <artifactId>mysql-connector-java</artifactId>
+	  <version>${mysql.version}</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>com.mchange</groupId>
+	  <artifactId>c3p0</artifactId>
+	  <version>${c3p0.version}</version>
+	</dependency>
+
+	<!-- Hibernate ORM Support -->
+	<dependency>
+	  <groupId>org.hibernate</groupId>
+	  <artifactId>hibernate-core</artifactId>
+	  <version>${hibernate.version}</version>
+	</dependency>
+	
+	<!-- Hibernate Validator Support -->
+	<dependency>
+	  <groupId>org.hibernate.validator</groupId>
+	  <artifactId>hibernate-validator</artifactId>
+	  <version>${hibernate.validator.version}</version>
+	</dependency>
+	
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- javax.servlet Jsp, Servlet,Jstl Support -->
+    <dependency>
+  	  <groupId>javax.servlet</groupId>
+  	  <artifactId>javax.servlet-api</artifactId>
+ 	  <version>4.0.1</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>javax.servlet.jsp</groupId>
+	  <artifactId>javax.servlet.jsp-api</artifactId>
+	  <version>2.3.3</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>javax.servlet</groupId>
+	  <artifactId>jstl</artifactId>
+	  <version>1.2</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+	<dependency>
+	    <groupId>commons-fileupload</groupId>
+	    <artifactId>commons-fileupload</artifactId>
+	    <version>${commons.fileupload.version}</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>${commons.io.version}</version>
+	</dependency>
+	
+	
+
+  </dependencies>
+  
+  
+  
+  
+
+  <build>
+    <finalName>spms</finalName>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
